@@ -1,0 +1,47 @@
+*{margin:0px; padding:0px; text-decoration:none; font-family:sans-serif;}
+body{background-color:rgb(246, 247, 255);   padding-top: 56px;}
+ul{list-style: none;}
+
+/*header*/
+header{width: 100%; height:100px; background-color: rgb(44, 46, 63);
+    position: fixed; top:0; z-index: 10;}
+    .logo{width:130px; float:left; position: fixed; left:495px; top:20px;}
+    .logo>img{width:130px; height:auto; }
+
+/*menu*/
+.menu{float: right;  position: fixed; left:974px; top:36px;}
+.menu a{color: rgba(255, 255, 255, 0.603);}
+.menu a:hover{color: white; font-weight: bold;}
+.menu_top{ padding-top:5px; position:fixed; left:1350px;
+    top:0;
+    font-size: 13px; float: right;}
+.menu_top li a{float: right; padding-right: 15px;}
+.menu_top li{float:right; }
+nav{float:right;}
+.navi li{float: left; }
+.navi>li{padding-right:65px;}
+.submenu{clear:left; background-color: brown; height: 300px;
+position: absolute;left: 0; display: none;}
+
+/* section */
+section {margin-top: 100px; text-align: center;}
+.wrap {width: 50%; padding: 15px; margin-left: 100px; background-color: white;
+    box-shadow: 0px 3px 2px #aab2bd;}
+#formgroup {padding: 15px;}
+#formgroup>label {float: left; font-size: 15pt;}
+#datepicker {width: 40%; height: 35px; border: 1px solid #ccc; border-radius: 4px;
+    font-size: 13pt; }
+#formcontrol {width: 40%; height: 35px; border: 1px solid #ccc; border-radius: 4px;
+                font-size: 13pt; }
+#submit_btn {margin-top: 10px; margin-bottom: 10px; padding: 15px; font-size: 18px;}
+#save { cursor: pointer; background-color:  rgb(44, 46, 63); border-color:  rgb(25, 26, 41);
+    border-radius: 10px; color: white; font-size: 18px; padding: 10px;}
+#reset { cursor: pointer; background-color:  rgb(44, 46, 63); border-color:  rgb(25, 26, 41);
+    border-radius: 10px; color: white; font-size: 18px; padding: 10px;}
+
+/* footer */
+footer{width: 100%; height:70px; background-color: rgb(44, 46, 63);
+    position: fixed; bottom:0; z-index: 10;}
+.foot_top{z-index:30; float:left;width:500px;height:35px; margin-left: 840px;padding-top: 6px;}
+.foot_top li a{ color:rgb(216, 216, 216); float: left; margin-right: 30px;}
+.foot_bot{z-index:30; color:rgb(216, 216, 216); float: left; width:100%; height:35px;text-align: center;}

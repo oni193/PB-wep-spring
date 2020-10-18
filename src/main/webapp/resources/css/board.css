@@ -1,0 +1,59 @@
+/*menu*/
+.menu{float: right;  position: fixed; left:974px; top:36px;}
+.menu a{color: rgba(255, 255, 255, 0.603);}
+.menu a:hover{color: white; font-weight: bold;}
+.menu_top{ padding-top:5px; position:fixed; left:1350px;
+    top:0;
+    font-size: 13px; float: right;}
+.menu_top li a{float: right; padding-right: 15px;}
+.menu_top li{float:right; }
+nav{float:right;}
+.navi li{float: left; }
+.navi>li{padding-right:65px;}
+.submenu{clear:left; background-color: brown; height: 300px;
+position: absolute;left: 0; display: none;}
+
+
+/* �쉶�썝 由ъ뒪�듃 */
+section{width: 1200px; height:700px; margin-left: 350px;margin-top: -22px; background-color:rgba(44,46,63,0.05);
+    padding: 30px;padding-left: 80px; padding-top: 50px;}
+.explain{text-align: center; width: 100%; height: 48px;margin-bottom: 20px;margin-top: 44px;  padding-top: 20px;
+background: rgb(227,227,227); background: linear-gradient(0deg, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 100%);
+color:black; font-size: 22px; font-weight: 800;}
+
+/* �궡�슜 �긽�떒遺�遺� */
+.allSearch{text-align: center; margin-bottom: 25px; margin-left: -30px;}
+#searching{width: 600px; height: 42px;border:black 1px solid; }
+#search_btn{width:80px;height:44px;margin-left: -7px; border:black 1px solid;border-left: none;
+    background-color: rgba(44,46,63,0.3); cursor: pointer;}
+.select img{width: 20px;}
+.select{padding-bottom: 10px;}
+#selectAll{width: 130px;height: 30px; padding: 2px;padding-bottom: 5px;padding-left: 10px;}
+#selectDelete{width:130px;height:30px;padding:2px;padding-bottom: 5px;padding-left: 10px;}
+
+
+
+/* �궡�슜 table */
+table{border-collapse: collapse; text-align: center;}
+th{border:1px solid gray; padding-left: 20px; padding-right: 20px;
+    padding-top: 5px; padding-bottom: 5px; background-color: rgba(44, 46, 63,0.3);}
+td{padding-left: 20px; padding-right: 20px; padding-top: 5px; padding-bottom: 5px;
+    border:1px solid gray;}
+#more, #delete{width: 50px;height: 24px;}
+
+/* �럹�씠吏� list*/
+.page{text-align: center; }
+.pagination{list-style: none; display: inline-block; padding:0; margin-top: 20px;}
+.pagination li{display: inline; text-align: center;}
+.pagination a{float:left; display: block; font-size:14px; text-decoration: none;
+padding:5px 12px; color:#96a0ad; line-height: 1.5;}
+.first{margin-right: 15px;}
+.last{margin-left: 15px;}
+.first:hover, .last:hover, .left:hover, .right:hover{color:#290050;}
+.pagination a:active{outline:none;}
+.modal .num{margin-left:3px; padding:0; width: 30px; height:30px; line-height: 30px;
+-moz-border-radius:100%; -webkit-border-radius:100%; border-radius: 100%;}
+.modal .num:hover{background-color: #290050; color:#ffffff;}
+.modal .num:active, .modal .num:active{ background-color: #290050; cursor: pointer;}
+.arrow-left{width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent;
+border-right: 10px solid blue;}

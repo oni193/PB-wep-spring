@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.mypageMapper">
+
+	<!-- 내 정보 조회 -->	
+	<select id="mypage" resultType="co.kr.playbowling.vo.MypageVO" parameterType="String">
+		SELECT
+			mem_name,
+			mem_id,
+			mem_pw,
+			mem_nickName,
+			mem_age,
+			mem_email,
+			mem_address
+		FROM
+			PB.member
+		WHERE
+			mem_id=#{mem_id}
+	</select>
+	
+	<!-- 내 정보 수정 -->
+	<update id="mypage_revice" parameterType="co.kr.playbowling.vo.MypageVO">
+		UPDATE PB.member
+			SET
+				mem_name=#{mem_name},
+				mem_id=#{mem_id},
+				mem_pw=#{mem_pw},
+				mem_nickName=#{mem_nickName},
+				mem_age=#{mem_age},
+				mem_email=#{mem_email},
+				mem_address=#{mem_address}
+			WHERE mem_id = #{mem_id}
+	</update>
+	
+</mapper>

@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//src/main/java/co/kr/playbowling/controller/AdminController.java=UTF-8
+encoding//src/main/java/co/kr/playbowling/controller/ManagerController.java=UTF-8
+encoding//src/main/java/co/kr/playbowling/controller/MemberController.java=UTF-8
+encoding//src/main/java/co/kr/playbowling/dao/MemberDAO.java=UTF-8
+encoding//src/main/java/co/kr/playbowling/dao/MemberDAOlmpl.java=UTF-8
+encoding//src/main/java/co/kr/playbowling/service/MemberService.java=UTF-8
+encoding//src/main/java/co/kr/playbowling/service/MemberServicelmpl.java=UTF-8
+encoding//src/main/webapp/WEB-INF/views/manager/managerBoard.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/manager/managerMem.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/manager/managerScore.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/member/personpolicy.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/member/policy.jsp=UTF-8
+encoding//src/main/webapp/resources/css/board.css=UTF-8

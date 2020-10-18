@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.adminMapper">
+
+
+	<!-- 관리자 가입하기 -->
+	<insert id="AdminRegister">
+		INSERT INTO ADMIN (
+		admin_id,
+		admin_pw,
+		admin_name,
+		admin_nickName)
+		VALUES (
+		#{admin_id},
+		#{admin_pw},
+		#{admin_name},
+		#{admin_nickName}
+		)
+	</insert>
+
+	<!-- 로그인 관련 mapper -->
+	<select id="AdminLogin"
+		resultType="co.kr.playbowling.vo.AdminVO">
+		SELECT
+		admin_id
+		FROM
+		admin
+		WHERE
+		admin_id=#{admin_id}
+		and admin_pw=#{admin_pw}
+	</select>
+
+	<!--글 강제 삭제 관련 mapper -->
+	<!-- 게시글 삭제 : bnum 기준으로 해당 데이터 삭제 -->
+	<delete id="AdminDelete">
+		DELETE FROM
+		board
+		WHERE
+		bnum = #{bnum}
+	</delete>
+
+
+</mapper>

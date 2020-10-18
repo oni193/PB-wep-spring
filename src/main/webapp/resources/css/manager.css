@@ -1,0 +1,48 @@
+
+
+/* 회원 리스트 */
+section{width: 1200px; height:700px; margin-left: 350px;margin-top: -22px; background-color:rgba(44,46,63,0.05);
+    padding: 30px;padding-left: 80px; padding-top: 50px;}
+.explain{text-align: center; width: 100%; height: 48px;margin-bottom: 20px;margin-top: 44px;  padding-top: 20px;
+background: rgb(227,227,227); background: linear-gradient(0deg, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 100%);
+color:black; font-size: 22px; font-weight: 800;}
+
+/* 내용 상단부분 */
+.allSearch{text-align: center; margin-bottom: 13px; margin-left: -30px;}
+#searching{width: 600px; height: 42px;border:black 1px solid; }
+#search_btn{width:80px;height:44px;margin-left: -7px; border:black 1px solid;border-left: none;
+    background-color: rgba(44,46,63,0.3); cursor: pointer;}
+.dateselect{margin-bottom: 20px; text-align: center;}
+.dateselect img{width: 23px; margin-left: 5px;}
+#select1{margin-top: 20px; margin-bottom: 10px;}
+#select2{margin-bottom: 20px;}
+#Date1{margin-left: 50px;}
+#Date3{margin-left: 13px;}
+#Date1, #Date2, #Date3, #Date4 {width: 200px; height: 20px;}
+
+/* 내용 table */
+table{border-collapse: collapse; text-align: center;}
+th{border:1px solid gray; padding-left: 20px; padding-right: 20px;
+    padding-top: 5px; padding-bottom: 5px; background-color: rgba(44, 46, 63,0.3);}
+td{padding-left: 20px; padding-right: 20px; padding-top: 5px; padding-bottom: 5px;
+    border:1px solid gray;}
+#more{width: 50px;height: 24px;}
+
+/* 페이지 list*/
+.page{text-align: center; }
+.pagination{list-style: none; display: inline-block; padding:0; margin-top: 20px;}
+.pagination li{display: inline; text-align: center;}
+.pagination a{float:left; display: block; font-size:14px; text-decoration: none;
+padding:5px 12px; color:#96a0ad; line-height: 1.5;}
+.first{margin-right: 15px;}
+.last{margin-left: 15px;}
+.first:hover, .last:hover, .left:hover, .right:hover{color:#290050;}
+.pagination a:active{outline:none;}
+.modal .num{margin-left:3px; padding:0; width: 30px; height:30px; line-height: 30px;
+-moz-border-radius:100%; -webkit-border-radius:100%; border-radius: 100%;}
+.modal .num:hover{background-color: #290050; color:#ffffff;}
+.modal .num:active, .modal .num:active{ background-color: #290050; cursor: pointer;}
+.arrow-left{width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent;
+border-right: 10px solid blue;}
+#secession{width:80px; height: 33px; border:1px dashed gray; background-color: rgba(44,46,63,0.3); cursor: pointer;
+margin-top: 10px; font-weight: bold;}

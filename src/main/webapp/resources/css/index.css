@@ -1,0 +1,52 @@
+*{margin:0px; padding:0px; text-decoration:none; font-family:sans-serif;}
+body{background-color:rgb(246, 247, 255);   padding-top: 56px;}
+ul{list-style: none;}
+
+/*header*/
+header{width: 100%; height:100px; background-color: rgb(44, 46, 63);
+position: fixed; top:0; z-index: 10;}
+.logo{ width:130px; float:left; position: fixed; left:495px; top:20px;}
+.logo>img{width:130px; height:auto; }
+
+/*menu*/
+.menu{float: right;  position: fixed; left:974px; top:36px;}
+.menu a{color: rgba(255, 255, 255, 0.603);}
+.menu a:hover{color: white; font-weight: bold;}
+.menu_top{ padding-top:5px; position:fixed; left:1350px;
+    top:0;
+    font-size: 13px; float: right;}
+.menu_top li a{float: right; padding-right: 15px;}
+.menu_top li{float:right; }
+nav{float:right;}
+.navi li{float: left; }
+.navi>li{padding-right:65px;}
+.submenu{clear:left; background-color: brown; height: 300px;
+position: absolute;left: 0; display: none;}
+
+
+/*main*/
+/*slideshow*/
+.slide{padding-left:500px; padding-top:100px;}
+.slideshow{width:900px; height:600px; float:left; position: relative;
+overflow: hidden; background-color: rgb(109, 111, 129);}
+.slideshow img{width:900px; height:600px; position: absolute;
+transition: all 4s;}
+
+/* maindeco */
+#maindeco_1{width:1100px; height:3px; background-color: rgb(44, 46, 63);
+float:left; margin-top: 40px; margin-left: 390px; margin-bottom: 40px;}
+
+/*menu_a*/
+.menu_index{float:left;clear:left; width: 1000px; padding-left:550px;margin-bottom: 100px;}
+.menu_index a{color:black;}
+.menu_a{float: left; padding-right: 70px; }
+.menu_a ul{ border: 1px solid rgb(150, 150, 150);}
+#menu_a_top img{width: 220px; margin-bottom: 10px; border-bottom: solid 1px rgb(150, 150, 150);}
+#menu_a_bot{width:220px; height: 150px;}
+
+/* footer */
+footer{width: 100%; height:70px; background-color: rgb(44, 46, 63);
+    position: fixed; bottom:0; z-index: 10;}
+.foot_top{z-index:30; float:left;width:500px;height:35px; margin-left: 840px;padding-top: 6px;}
+.foot_top li a{ color:rgb(216, 216, 216); float: left; margin-right: 30px;}
+.foot_bot{z-index:30; color:rgb(216, 216, 216); float: left; width:100%; height:35px;text-align: center;}
