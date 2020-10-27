@@ -1,7 +1,4 @@
-# k2
-202007-202010 playbowling project
-
-#Play Bowling - 볼링 동호회 웹프로젝트
+#Play Bowling by K2 - 볼링 동호회 웹프로젝트 
 ------------
 
 ## 개발 배경 및 목적
