@@ -1,51 +1,56 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Play Bowling</title>
-    <link rel="stylesheet" href="css/index.css" media="all" >
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/index_small.css" media="screen and(max-device-width:900px) and(min-device-width:1px)">
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/jquery-migrate-1.4.1.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jqueryUser.js"></script>
+    <link rel="stylesheet" href="/resources/css/policy.css" media="all">
 </head>
+
 <body>
      <header>
-        <div class="logo">
-            <img src="/image/logo.png">
-        </div>
-        <div class="menu">
-            <div class="menu_top">
-                <ul>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Join Us</a></li>
-                </ul>
-            </div>
-        <nav>
-            <ul class="navi">
-                <li><a href="#">동호회</a></li>
-                <li><a href="#">점수 관리</a></li>
-                <ul class="submenu">
-                    <li><a href="#">점수 보기</a></li>
-                    <li><a href="#">점수 추가</a></li>
-                    <li><a href="#">점수 수정</a></li>
-                    <li><a href="#">점수 삭제</a></li>
-                        </ul>
-                <li><a href="#">마이페이지</a>
-                    <ul class="submenu">
-                        <li><a href="#">정보 보기</a></li>
-                        <li><a href="#">정보수정</a></li>
-                        </ul>                  
-                        </nav> 
-        </div>
-    </header> 
+      <div class="logo">
+         <img src="/resources/image/logo.png">
+      </div>
+      <div class="menu">
+         <div class="menu_top">
+            <ul>
+               <c:choose>
+                  <c:when test="${empty USER}">
+                     <li><a href="/member/login">Login</a></li>
+                     <li><a href="/member/register">Register</a></li>
+                  </c:when>
+                  <c:otherwise>
+                     <li><a href="/member/logout">Logout</a></li>
+                  </c:otherwise>
+               </c:choose>
+            </ul>
+         </div>
+         <nav id="menu1">
+            <ul class="main">
+               <li><a href="/board/listPage?num=1">동호회</a></li>
+               <li><a href="#">점수 관리</a>
+                  <ul class="sub">
+                     <li><a href="#">점수 보기</a></li>
+                     <li><a href="#">점수 추가</a></li>
+                     <li><a href="#">점수 수정</a></li>
+                  </ul></li>
+               <li><a href="#">마이페이지</a>
+                  <ul class="sub">
+                     <li><a href="#">정보 보기</a></li>
+                     <li><a href="#">정보수정</a></li>
+                  </ul></li>
+            </ul>
+         </nav>
+      </div>
+   </header>
 
-    <div class="abc">
-        <br>
-        
+    <div class="notice">
+        <br>        
     K2는 법령의 규정에 따라 수집·보유 및 처리하는 개인정보를 <br>
     공공업무의 적절한 수행과 정보주체의 권익을 보호하기 위하여<br>
      적법하고 적정하게 취급할 것입니다. <br>
@@ -61,16 +66,23 @@
     해당 홈페이지에 별도의 개인정보처리방침을 정하여 운영하고 있습니다.<br>
 </div>
 
-    <footer>
-        <div class="foot_top">
-            <ul>
-                <li><a href="#">이용약관</a></li>
-                <li><a href="#">개인정보취급방침</a></li>
-            </ul>
-        </div>
-        <div class="foot_bot">
-            <p>Copyright SK2, All Rights Reserved.</p>
-        </div>
-    </footer>
+
+
+ <footer>
+      <div class="foot_top">
+         <ul>
+            <li><a href="/member/policy">이용약관</a></li>
+            <li><a href="/member/personpolicy">개인정보취급방침</a></li>
+
+         </ul>
+      </div>
+      <div class="foot_bot">
+      <ul>
+         <li>
+            Copyright K2, All Rights Reserved.
+         </li>
+      </ul>
+      </div>
+   </footer>
 </body>
 </html>

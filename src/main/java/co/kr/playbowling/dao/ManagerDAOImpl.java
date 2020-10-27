@@ -9,7 +9,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import co.kr.playbowling.vo.BoardVO;
-import co.kr.playbowling.vo.AdminVO;
 import co.kr.playbowling.vo.MemberVO;
 
 @Repository

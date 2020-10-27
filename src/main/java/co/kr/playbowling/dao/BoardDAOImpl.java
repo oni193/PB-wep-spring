@@ -17,19 +17,22 @@ public class BoardDAOImpl implements BoardDAO {
     @Inject SqlSession sqlsession;
 	private static String namespace = "mappers.boardMapper";
 	 
-	
+	//寃뚯떆湲� �벐湲�
 	@Override
 	public void write(BoardVO vo) throws Exception {
 		String bid = vo.getBid();
 		sqlsession.insert(namespace+".write", vo);
 	}
+	
+	// 寃뚯떆湲� �씫湲�
 	@Override
 	public BoardVO read(int bnum) throws Exception {
 		
 		return sqlsession.selectOne(namespace+".read",bnum);
 
 	}
-
+	
+	//寃뚯떆湲� �닔�젙
 	@Override
 	public void update(BoardVO vo) throws Exception {
 		sqlsession.update(namespace+".update",vo);
@@ -40,19 +43,25 @@ public class BoardDAOImpl implements BoardDAO {
 		sqlsession.delete(namespace+".delete", bnum);
 	}
 
+	//寃뚯떆湲� 紐⑸줉
 	@Override
 	public List<BoardVO> listAll() throws Exception {
 		return sqlsession.selectList(namespace+".listAll");
 	}
 	
+	// 議고쉶�닔 利앷�
 	@Override
 	public void updateReadCount(int bnum) throws Exception {
 		sqlsession.update(namespace +".updateReadCount", bnum);
 	}
+	
+	//珥� 寃뚯떆臾� 媛��닔 利앷�
 	@Override
 	public int boardCount() throws Exception {
 		return sqlsession.selectOne(namespace+".boardCount");
 	}
+	
+	//�럹�씠吏뺤쿂由�
 	@Override
 	public List listPage(int displayPost, int postNum) throws Exception {
 		HashMap data = new HashMap();

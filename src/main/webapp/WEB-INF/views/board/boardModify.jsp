@@ -1,63 +1,78 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page session="false"%>
 <!DOCTYPE>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/resources/css/boardMain.css">
+<link rel="stylesheet" href="/resources/css/boardboot.css">
 <link href="/resources/css/bootstrap.css" rel="stylesheet">
 <title>Play Bowling</title>
 </head>
 <body>
 	<header>
-		<div class="logo">
-			<img src="/resources/image/logo.png">
-		</div>
-		<div class="menu">
-			<div class="menu_top">
-				<ul>
+      <div class="logo">
+         <img src="/resources/image/logo.png">
+      </div>
+      <div class="menu">
+         <div class="menu_top">
+            <ul>
+               <c:choose>
+                  <c:when test="${empty USER}">
+                     <li><a href="/member/login">Login</a></li>
+                     <li><a href="/member/register">Register</a></li>
+                  </c:when>
+                  <c:otherwise>
+                     <li><a href="/member/logout">Logout</a></li>
+                  </c:otherwise>
+               </c:choose>
+            </ul>
+         </div>
+         <nav id="menu1">
+            <ul class="main">
+               <li><a href="/board/listPage?num=1">동호회</a></li>
+               <li><a href="#">점수 관리</a>
+                  <ul class="sub">
+                     <li><a href="/personal_score/score_select">점수 보기</a></li>
+                     <li><a href="/personal_score/score_insert">점수 추가</a></li>
+                     <li><a href="/personal_score/score_update">점수 수정</a></li>
+                  </ul></li>
+               <li><a href="#">마이페이지</a>
+                  <ul class="sub">
+                     <li><a href="/mypage/mypage">정보 보기</a></li>
+                     <li><a href="/mypage/mypage_revice">정보수정</a></li>
+                  </ul></li>
+            </ul>
+         </nav>
+      </div>
+   </header>
 
-					<li><a href="./member/login">Login</a></li>
-					<li><a href="./member/register">Register</a></li>
-
-
-					<li><a href="/member/logout">Logout</a></li>
-
-				</ul>
-			</div>
-			<nav>
-				<ul class="navi">
-					<li><a href="#">동호회</a></li>
-					<li><a href="#">정기전</a></li>
-					<li><a href="#">마이페이지</a>
-						<ul class="submenu">
-							<li><a href="#">내 정보보기</a></li>
-							<li><a href="#">개인 점수관리</a></li>
-							<li><a href="#">정기전 점수관리</a></li>
-							<li><a href="#">탈퇴</a></li>
-						</ul></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-
-	<section>
+	<section id="boardReadForm">
 			<form action="boardModify" method="post">
 			<p>
-				<label>글번호</label> <input type="text" name="bnum"
+				<label>글번호</label> 
+				<input type="text" name="bnum"
 					value="${boardVO.bnum}" readonly="readonly">
 			</p>
 			<p>
-				<label>제목</label><input type="text" name="btitle"
-					value="${boardVO.btitle}">
+				<label>작성자</label> 
+				<input type="text" name="bid"
+					value="${boardVO.bid}">
 			</p>
-			
+			<p>
+				<label>제목</label>
+				<input type="text" name="btitle"
+					value="${boardVO.btitle}">
+			</p>			
 			<label>내용</label>
 			<textarea name=bcontent rows="10" cols="70">${boardVO.bcontent}</textarea>
 			<br>
+							<div id="but">
 			<button type="submit">완료</button>
+			</div>
 	</form>
 	</section>
 

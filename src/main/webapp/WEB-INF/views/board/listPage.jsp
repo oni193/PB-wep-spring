@@ -8,44 +8,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/resources/css/boardMain.css">
-<link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="/resources/css/boardboot.css">
 <title>Play Bowling</title>
 </head>
 <body>
 	<header>
-		<div class="logo">
-			<img src="/resources/images/logo.png">
-		</div>
-		<div class="menu">
-			<div class="menu_top">
-				<ul>
+      <div class="logo">
+         <img src="/resources/image/logo.png">
+      </div>
+      <div class="menu">
+         <div class="menu_top">
+            <ul>
+               <c:choose>
+                  <c:when test="${empty USER}">
+                     <li><a href="/member/login">Login</a></li>
+                     <li><a href="/member/register">Register</a></li>
+                  </c:when>
+                  <c:otherwise>
+                     <li><a href="/member/logout">Logout</a></li>
+                  </c:otherwise>
+               </c:choose>
+            </ul>
+         </div>
+         <nav id="menu1">
+            <ul class="main">
+               <li><a href="/board/listPage?num=1">동호회</a></li>
+               <li><a href="#">점수 관리</a>
+                  <ul class="sub">
+                     <li><a href="/personal_score/score_select">점수 보기</a></li>
+                     <li><a href="/personal_score/score_insert">점수 추가</a></li>
+                     <li><a href="/personal_score/score_update">점수 수정</a></li>
+                  </ul></li>
+               <li><a href="#">마이페이지</a>
+                  <ul class="sub">
+                     <li><a href="/mypage/mypage">정보 보기</a></li>
+                     <li><a href="/mypage/mypage_revice">정보수정</a></li>
+                  </ul></li>
+            </ul>
+         </nav>
+      </div>
+   </header>
 
-					<li><a href="./member/login">Login</a></li>
-					<li><a href="./member/register">Register</a></li>
-
-
-					<li><a href="/member/logout">Logout</a></li>
-
-				</ul>
-			</div>
-			<nav>
-				<ul class="navi">
-					<li><a href="#">동호회</a></li>
-					<li><a href="#">정기전</a></li>
-					<li><a href="#">마이페이지</a>
-						<ul class="submenu">
-							<li><a href="#">내 정보보기</a></li>
-							<li><a href="#">개인 점수관리</a></li>
-							<li><a href="#">정기전 점수관리</a></li>
-							<li><a href="#">탈퇴</a></li>
-						</ul></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-
-	<section>
+	<section id="listPage">
 		<form method="get" action="boardWrite">
 			<div class="container">
 				<div class="row">
@@ -61,9 +65,12 @@
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach items="${list}" var="boardVO">
+							<c:forEach items="${list}" var="boardVO" varStatus="status">
 								<tr>
 									<td>${boardVO.bnum}</td>
+									
+									<td>${(count-status.index)-((pageNum-1)*pageNum_cnt)}</td>
+									
 									<td><a href='/board/boardRead?bnum=${boardVO.bnum}'>${boardVO.btitle}</a></td>
 									<td>${boardVO.bid}</td>
 									<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
@@ -99,23 +106,10 @@
 							<a href="/board/listPage?num=${endPageNum+1}">다음</a>
 							</span>
 						</c:if>
-						
-						
-						
-						<%-- <c:forEach begin="1" end="${pageNum}" var="num">
-							<span> <a href="/board/listPage?num=${num}">${num}</a>
-							</span>
-						</c:forEach> --%>
-					</div>
-
-
-
-
-
-
 					<br> <a href="boardWrite.html"
 						class="btn btn-primary pull-right" type="submit">글쓰기</a>
 				</div>
+			</div>
 			</div>
 		</form>
 	</section>

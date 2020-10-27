@@ -17,9 +17,7 @@ public class MemberServicelmpl implements MemberService{
 	//�쉶�썝媛��엯
 	@Override
 	public void register(MemberVO vo) throws Exception {
-		System.out.println("17");
 		dao.register(vo);
-		System.out.println("18");
 	}
 
 	//濡쒓렇�씤

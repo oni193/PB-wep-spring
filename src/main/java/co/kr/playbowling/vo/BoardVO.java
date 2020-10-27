@@ -9,6 +9,7 @@ public class BoardVO {
 	private String bcontent;
 	private int readcount;
 	private Date bdate;	
+	private int recnt;
 	
 	public int getBnum() {
 		return bnum;
@@ -47,10 +48,18 @@ public class BoardVO {
 		this.bdate = bdate;
 	}
 	
+	public int getRecnt() {
+		return recnt;
+	}
+	public void setRecnt(int recnt) {
+		this.recnt = recnt;
+	}
 	@Override
 	public String toString() {
 		return "BoardVO [bnum=" + bnum + ", bid=" + bid + ", btitle=" + btitle + ", bcontent=" + bcontent
-				+ ", readcount=" + readcount + ", bdate=" + bdate + "]";
+				+ ", readcount=" + readcount + ", bdate=" + bdate + ", recnt=" + recnt + "]";
 	}
+	
+	
 	
 }

@@ -1,7 +1,7 @@
 *{margin:0px; padding:0px; text-decoration:none; font-family:sans-serif;}
 body{background-color: rgb(44, 46, 63);}
 
-/* 로그인페이지 */
+/* login  */
 .loginForm{position:absolute; top:50%; left:50%;
 width:300px; height:400px; transform: translate(-50%, -50%);
 padding:30px,20px; background-color:white; text-align: center;
@@ -21,7 +21,7 @@ cursor: pointer; transition:0.4s; display:inline;}
 .btn:hover{background-position: right;}
 .bottom_text{position:relative;text-align: center; padding-top: 60px;}
 
-/*로그인 성공 페이지*/
+/* login success / logout */
 .login_success{margin-top:70px;margin-bottom:30px; padding: 10px 10px;
 position: relative; }
 .bottom_logout{position: relative; margin-top: 100px;}
@@ -40,9 +40,7 @@ position: relative; }
 
 
 
-
-
-/*회원가입 페이지*/
+/*�쉶�썝媛��엯 �럹�씠吏�*/
 .join_form{background-color: white; position:absolute; top:50%; left:50%;
 width:500px; height:650px;transform:translate(-50%,-50%); 
 border-radius: 15px;}
@@ -53,7 +51,7 @@ border-radius: 15px;}
 /* #join_deco1{width: 400px; height:1.4px; background-color:rgb(44, 46, 63);
 margin-left: 50px;margin-top: 10px;margin-bottom: 20px;} */
 
-/*회원가입 form*/
+/*�쉶�썝媛��엯 form*/
 .form_i{padding: 5px; float:left;width:470px;margin-bottom: 13px;}
 .form_i>label{float:left; width: 20%; padding-left: 15px;}
 

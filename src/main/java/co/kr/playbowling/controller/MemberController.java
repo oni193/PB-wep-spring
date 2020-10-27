@@ -1,6 +1,9 @@
 package co.kr.playbowling.controller;
 
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -43,27 +46,18 @@ public class MemberController {
 	//�쉶�썝媛��엯
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String postmemberRegister(MemberVO vo) throws Exception{
-		System.out.println("1");
 		logger.info("Post register");
-		System.out.println("2");
 		int result=service.idChk(vo);
-		System.out.println("3");
 		try {
-			System.out.println("4");
 			if(result==1) {
-				System.out.println("5");
 				return "/member/register";
 			}else if(result==0) {
-				System.out.println("6");
 				service.register(vo);
-				System.out.println("7");
 			}
 			
 		}catch(Exception e) {
-			System.out.println("8");
 			throw new RuntimeException();
 		}
-		System.out.println("9");
 		return "redirect:/";
 		
 	}
@@ -117,11 +111,22 @@ public class MemberController {
 	@ResponseBody
 	@RequestMapping(value="/idChk",method=RequestMethod.POST)
 	public int idChk(MemberVO vo)throws Exception{
-		System.out.println("a");
 		int result = service.idChk(vo);
-		System.out.println("b");
 		return result;
 	}
+	
+	//이용약관 화면
+	@RequestMapping("/policy")
+	public String policy() {
+		return "/member/policy";
+	}
+	
+	//개인정보취급방침 화면
+	@RequestMapping("/personpolicy")
+	public String personPolicy() {
+		return "/member/personpolicy";
+	}
+	
 	
 	
 }

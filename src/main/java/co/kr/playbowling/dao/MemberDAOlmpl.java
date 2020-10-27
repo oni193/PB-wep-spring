@@ -24,9 +24,7 @@ public class MemberDAOlmpl implements MemberDAO {
 	
 	@Override
 	public void register(MemberVO vo) throws Exception {
-		System.out.println("13");
 		 sql.insert(namespace + ".register", vo);
-		System.out.println("14");
 	}
 
 	

@@ -3,7 +3,6 @@ package co.kr.playbowling.dao;
 import java.util.List;
 
 import co.kr.playbowling.vo.BoardVO;
-import co.kr.playbowling.vo.AdminVO;
 import co.kr.playbowling.vo.MemberVO;
 
 public interface ManagerDAO {

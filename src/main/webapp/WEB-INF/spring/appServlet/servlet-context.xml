@@ -22,6 +22,6 @@
 	</beans:bean>
 	
 	
-	<context:component-scan base-package="co.kr.playbowling/*" />
+	<context:component-scan base-package="co.kr.playbowling.*" />
 	
 </beans:beans>

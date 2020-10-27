@@ -7,7 +7,7 @@
 
 	<!-- 관리자 가입하기 -->
 	<insert id="register">
-		INSERT INTO MEMBER (
+		INSERT INTO admin(
 			admin_id,
 			admin_pw,
 			admin_name,
