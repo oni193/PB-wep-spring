@@ -9,7 +9,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/resources/css/boardboot.css">
-<link href="/resources/css/bootstrap.css" rel="stylesheet">
 <title>Play Bowling</title>
 </head>
 <body>
@@ -68,7 +67,7 @@
 					value="${boardVO.btitle}">
 			</p>			
 			<label>내용</label>
-			<textarea name=bcontent rows="10" cols="70">${boardVO.bcontent}</textarea>
+			<textarea name=bcontent rows="10" cols="40">${boardVO.bcontent}</textarea>
 			<br>
 							<div id="but">
 			<button type="submit">완료</button>

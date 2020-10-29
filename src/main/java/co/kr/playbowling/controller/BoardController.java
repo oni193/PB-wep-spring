@@ -13,25 +13,26 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import co.kr.playbowling.service.BoardService;
+import co.kr.playbowling.service.ReplyService;
 import co.kr.playbowling.vo.BoardVO;
+import co.kr.playbowling.vo.ReplyVO;
 
 @Controller
 @RequestMapping(value = "/board")
 public class BoardController {
 
-	@Inject // 二쇱엯(�떖遺�由꾧씔) 紐낆떆
-	BoardService service; // Service �샇異쒖쓣 �쐞�븳 媛앹껜�깮�꽦
+	BoardService service; 
 
-	//寃뚯떆湲� 紐⑸줉
-	@RequestMapping(value = "/boardList", method = RequestMethod.GET) // 二쇱냼 �샇異� 紐낆떆 . �샇異쒗븯�젮�뒗 二쇱냼 �� REST 諛⑹떇�꽕�젙 (GET)
-	public String listAll(Model model) throws Exception { // 硫붿냼�뱶 �씤�옄媛믪� model �씤�꽣�럹�씠�뒪(jsp�쟾�떖 �떖遺�由꾧씔)
-		model.addAttribute("list", service.listAll()); // jsp�뿉 �떖遺�由꾪븷 �궡�뿭(�꽌鍮꾩뒪 �샇異�)
-		
+	@Inject
+	private ReplyService ReplyService;
+	
+	@RequestMapping(value = "/boardList", method = RequestMethod.GET) 
+	public String listAll(Model model) throws Exception { 
+		model.addAttribute("list", service.listAll()); 
 		return "redirect:/board/listPage?num=1";
 	}
 
 
-	//湲��옉�꽦
 	@RequestMapping(value="/boardWrite", method = RequestMethod.GET)
 	public void boardWriteGET(BoardVO board, Model model) throws Exception{
 	}
@@ -44,36 +45,35 @@ public class BoardController {
 		
 	}
 	
-	//寃뚯떆湲� 議고쉶
 	@RequestMapping(value="/boardRead", method=RequestMethod.GET)	//get�쑝濡� �럹�씠吏� �샇異�
 		public void read(@RequestParam("bnum")int bnum, Model model)throws Exception{
-		 // �씤�옄媛믪� �뙆�씪誘명꽣 媛믪쑝濡� 湲곕낯�궎�씤 bnum湲곗��쑝濡� Model�쓣 �궗�슜�븯�뿬 遺덈윭�샂
 		model.addAttribute(service.read(bnum));
+		
+		//댓글 조회
+		
+		List<ReplyVO> reply = null;
+		reply =ReplyService.list(bnum);
+		model.addAttribute("reply", reply);
 		
 	}
 	
-	//寃뚯떆湲� �닔�젙get
 	@RequestMapping(value="/boardModify", method=RequestMethod.GET)	//GET諛⑹떇�쑝濡� �럹�씠吏� �샇異�
 		public void modifyGET(int bnum, Model model) throws Exception{
 		model.addAttribute(service.read(bnum));
 	}
 	
-	//寃뚯떆湲� �닔�젙post
 	@RequestMapping(value="/boardModify", method=RequestMethod.POST)
 	public String modifyPost(BoardVO board, RedirectAttributes rttr) throws Exception{
 		service.modify(board);
-		//湲� �닔�젙 �꽌鍮꾩뒪 �샇異�
 		return "redirect:/board/listPage?num=1";
 	}
 	
-	//寃뚯떆湲� �궘�젣
 	@RequestMapping(value="/boardRemove", method=RequestMethod.POST)
 	public String removePOST(@RequestParam("bnum")int bnum,RedirectAttributes rttr) throws Exception{
 		service.remove(bnum);
 		return "redirect:/board/listPage?num=1";
 	}
 	
-	//寃뚯떆臾� 紐⑸줉 + �럹�씠吏� 異붽�
 	@RequestMapping(value="/listPage", method=RequestMethod.GET)
 	public void getListPage(Model model, @RequestParam("num")int num) throws Exception{
 		
@@ -104,9 +104,12 @@ public class BoardController {
 		model.addAttribute("next", next);
 		
 		model.addAttribute("select",num);
+		model.addAttribute("count",count);
 		
+
 	}
 	
+
 }
 
 

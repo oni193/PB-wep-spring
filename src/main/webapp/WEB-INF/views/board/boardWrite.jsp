@@ -92,7 +92,7 @@
 				<li><a href="#">개인정보취급방침</a></li>
 			</ul>
 		</div>
-		<div class="foot_bot">
+		<div class="foot_bot">	
 			<p>Copyright SK2, All Rights Reserved.</p>
 		</div>
 	</footer>
