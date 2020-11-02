@@ -37,3 +37,7 @@
 
 #### 프로젝트 관련 더욱 자세한 사항은 이 링크를 통해 확인하세요
 [링크](https://www.notion.so/4c258f6c937a4101b1ff96e8e5d9a638)
+
+
+[![HitCount](http://hits.dwyl.com/oni193/Play-Bowling.svg)](http://hits.dwyl.com/oni193/Play-Bowling)
+
